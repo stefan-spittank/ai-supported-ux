@@ -29,8 +29,8 @@ Lies alle angegebenen Dateien vollständig.
 ## Methodik: Holtzblatt Affinity Mapping (mit optionaler Hassenzahl-Ebene)
 
 ### Die vier Pflichtebenen
-1. **Individuelle Notiz** (Work Note): Jede nummerierte Zeile aus den Protokollen — mit Quellenangabe
-2. **Header** (Yellow Label): Kleine thematische Gruppe von 3–6 verwandten Notizen
+1. **Individuelle Notiz** (Work Note): Jede nummerierte Zeile aus den Protokollen — mit Quellenangabe. Der Wortlaut der Original-Notiz wird niemals verändert.
+2. **Header** (Yellow Label): Kleine thematische Gruppe von 2–6 verwandten Notizen. Enthält ein Header mehr als 6 Notizen, prüfe zwingend, ob er in zwei spezifischere Header aufgeteilt werden kann.
 3. **Super Header** (Pink Label): Übergeordnete Gruppe von mehreren gelben Clustern
 4. **Super Super Header** (Blue Label): Oberstes Thema, das mehrere rosa Cluster zusammenfasst
 
@@ -78,8 +78,8 @@ Da alle Rohdaten verwendet werden (keine "Capture this"-Vorauswahl wie im klassi
 ### Modus A — Neu erstellen
 
 1. **Dateien einlesen**: Lies alle angegebenen Protokoll-Dateien
-2. **Notizen extrahieren**: Extrahiere jede nummerierte Zeile als eigenständige Notiz mit Quellenangabe (short label + Zeilennummer)
-3. **Header bilden**: Gruppiere inhaltlich verwandte Notizen. Vergib Titel (Nutzerperspektive-Satz) und Beschreibung
+2. **Notizen extrahieren**: Extrahiere jede nummerierte Zeile als eigenständige Notiz mit Quellenangabe (short label + Zeilennummer). Übernimm den Originaltext wortgetreu — keine Umformulierungen, keine Kürzungen.
+3. **Header bilden**: Gruppiere inhaltlich verwandte Notizen (2–6 pro Header). Vergib Titel (Nutzerperspektive-Satz) und Beschreibung. Nach dem Clustern: Prüfe jeden Header mit mehr als 6 Notizen — teile ihn zwingend in zwei spezifischere Header auf, wenn eine sinnvolle Unterscheidung möglich ist.
 4. **Super Header bilden**: Fasse verwandte Header zusammen. Vergib Titel und Beschreibung
 5. **Super Super Header bilden**: Fasse verwandte Super Header zusammen. Vergib Titel und Beschreibung
 6. **Grundbedürfnisse prüfen (optional)**: Prüfe, ob Super Super Header eindeutig einem Hassenzahl-Bedürfnis zugeordnet werden kann
@@ -175,9 +175,11 @@ status: "draft"
 Bevor du die Datei schreibst, prüfe:
 - [ ] Jeder Header- und Super-Header-Titel ist ein vollständiger Satz aus Nutzerperspektive
 - [ ] Kein Cluster hat weniger als 2 Notizen
+- [ ] Kein Header hat mehr als 6 Notizen — wenn doch, wurde eine Aufteilung explizit geprüft und verworfen
 - [ ] Keine Notiz erscheint in mehr als einem Cluster
 - [ ] Alle Notizen tauchen entweder in einem Cluster oder im "Nicht geclustert"-Abschnitt auf
 - [ ] Quellenangaben (short label + Zeilennummer) sind bei jeder Notiz vollständig
+- [ ] Kein Notiztext wurde umformuliert — Originalwortlaut ist unverändert
 - [ ] Hassenzahl-Ebene: Nur verwendet, wenn die Zuordnung eindeutig und nicht erzwungen ist
 - [ ] Modus B: Changelog enthält alle strukturellen Änderungen gegenüber der Vorgänger-Map
 - [ ] Modus B: Kein Cluster wurde nur deshalb beibehalten, weil er bereits existierte
