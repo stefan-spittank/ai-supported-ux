@@ -69,6 +69,27 @@ Die 7 (+1) psychologischen Grundbedürfnisse:
 
 Zusätzlich lieferst du für jeden Cluster eine kurze Beschreibung (1–2 Sätze), die erklärt, was die Notizen in diesem Cluster verbindet.
 
+### Visualisierung (Mermaid)
+
+Am Ende des Dokuments wird ein Mermaid-Mindmap-Block erzeugt, der die Hierarchie kompakt visualisiert: Grundbedürfnis → Super Super Header → Super Header.
+
+Regeln für den Mindmap-Block:
+- Verwende kurze Schlagworte für die Knoten (2–5 Wörter), keine vollständigen Sätze
+- Ist keine Hassenzahl-Ebene vorhanden, bildet der Projektname die Wurzel und die Super Super Header die erste Ebene
+- Sonderzeichen in Knotentexten (Klammern, Anführungszeichen, Slashes) vermeiden oder durch Leerzeichen ersetzen, damit Mermaid den Block fehlerfrei rendert
+
+```mermaid
+mindmap
+  root((Projektname))
+    Grundbedürfnis A
+      Super Super Header 1
+        Super Header 1.1
+        Super Header 1.2
+    Grundbedürfnis B
+      Super Super Header 2
+        Super Header 2.1
+```
+
 ### Nicht geclusterte Notizen
 
 Da alle Rohdaten verwendet werden (keine "Capture this"-Vorauswahl wie im klassischen Holtzblatt-Prozess), werden nicht alle Notizen einen passenden Cluster finden. Nicht geclusterte Notizen erscheinen in einem eigenen Abschnitt `## Nicht geclustert` am Ende des Dokuments. Das ist transparent und beabsichtigt.
@@ -84,8 +105,9 @@ Da alle Rohdaten verwendet werden (keine "Capture this"-Vorauswahl wie im klassi
 5. **Super Super Header bilden**: Fasse verwandte Super Header zusammen. Vergib Titel und Beschreibung
 6. **Grundbedürfnisse prüfen (optional)**: Prüfe, ob Super Super Header eindeutig einem Hassenzahl-Bedürfnis zugeordnet werden kann
 7. **Nicht geclusterte Notizen sammeln**: Alle Notizen ohne passenden Cluster in separaten Abschnitt
-8. **Dateiname ableiten**: Aus Metadaten der Protokolle ableiten (Projektname, Datum)
-9. **Datei schreiben**: Schreibe nach `/ux-research/interviews/affinity-mapping/`
+8. **Mindmap erzeugen**: Erzeuge den Mermaid-Mindmap-Block über die Hierarchie (Grundbedürfnis → Super Super Header → Super Header) mit kurzen Schlagworten
+9. **Dateiname ableiten**: Aus Metadaten der Protokolle ableiten (Projektname, Datum)
+10. **Datei schreiben**: Schreibe nach `/ux-research/interviews/affinity-mapping/`
 
 ### Modus B — Erweitern
 
@@ -168,6 +190,22 @@ status: "draft"
 > Diese Notizen konnten keinem Cluster zugeordnet werden. Sie bleiben zur Transparenz erhalten.
 
 - **[short-label #N]** [Originaltext der Notiz]
+
+---
+
+## Visualisierung
+
+```mermaid
+mindmap
+  root((Projektname))
+    Grundbedürfnis A
+      Super Super Header 1
+        Super Header 1.1
+        Super Header 1.2
+    Grundbedürfnis B
+      Super Super Header 2
+        Super Header 2.1
+```
 ````
 
 ## Qualitätskriterien
@@ -180,6 +218,8 @@ Bevor du die Datei schreibst, prüfe:
 - [ ] Alle Notizen tauchen entweder in einem Cluster oder im "Nicht geclustert"-Abschnitt auf
 - [ ] Quellenangaben (short label + Zeilennummer) sind bei jeder Notiz vollständig
 - [ ] Kein Notiztext wurde umformuliert — Originalwortlaut ist unverändert
+- [ ] Mindmap enthält alle Super Super Header und Super Header
+- [ ] Mindmap-Knoten verwenden kurze Schlagworte (keine vollständigen Sätze) und keine Sonderzeichen, die Mermaid-Rendering brechen
 - [ ] Hassenzahl-Ebene: Nur verwendet, wenn die Zuordnung eindeutig und nicht erzwungen ist
 - [ ] Modus B: Changelog enthält alle strukturellen Änderungen gegenüber der Vorgänger-Map
 - [ ] Modus B: Kein Cluster wurde nur deshalb beibehalten, weil er bereits existierte

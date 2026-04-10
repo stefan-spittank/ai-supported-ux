@@ -366,3 +366,36 @@ status: "draft"
 - **sb-jk #26** Ist in den Büros, wenn die Mitarbeiter nicht da sind. Vor der Hauptarbeitszeit, manchmal auch Abend und ggf. am Wochenende
 - **sb-jk #27** Hat gerne seine Ruhe bei der Arbeit
 - **sb-jk #29** Eine Firma hat so um die 80 Pflanzen
+
+---
+
+## Visualisierung
+
+```mermaid
+mindmap
+  root((Blumify))
+    KOMPETENZ
+      Pflanzen ohne Expertenwissen pflegen
+        Pflege nach Gefühl
+        Pflanzenerkennung und Wissen
+    STIMULATION
+      Wohnung lebendig gestalten
+        Pflanzen als Dekoration
+        Ausgleich zum Alltag
+    AUTONOMIE
+      Kontrolle trotz Abwesenheit
+        Urlaub und Vertretung
+        Koordination im Haushalt
+    SICHERHEIT
+      Pflanzen nicht verlieren
+        Ueberblick und Warnungen
+        Datenschutz
+    VERBUNDENHEIT
+      Pflege als Gemeinschaftssache
+        Asymmetrische Verantwortung
+    Professionelle Pflege
+      System fuer mehrere Standorte
+    App-Nutzung
+      Technikbereitschaft und Hardware
+      Preisbereitschaft Abo
+```
