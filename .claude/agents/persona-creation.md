@@ -44,10 +44,20 @@ Ziel: 6–12 aussagekräftige Variablen, die echte Unterschiede zwischen den Int
 
 ### Mapping (Schritt 2)
 
-Verorte jeden Interviewten auf jeder Variable. Nutze eine dreistufige Skala:
-- **–** (linker Pol)
-- **○** (Mitte / unklar)
-- **+** (rechter Pol)
+Verorte jeden Interviewten auf jeder Variable. Jede Variable ist ein Kontinuum zwischen zwei Polen.
+
+**Skala pro Variable individuell festlegen:** Bestimme für jede Variable, wie viele Ausprägungen sinnvoll sind — abhängig von der Natur der Variable:
+- Binäre oder klar zweiwertige Variablen: 2 Stufen (z.B. "ja / nein", "vorhanden / nicht vorhanden")
+- Variablen mit wenigen klar unterscheidbaren Stufen: 3 Stufen
+- Stetige Variablen mit graduellen Übergängen: 5 Stufen ist ein guter Kompromiss
+
+Die Pole und die Anzahl der Stufen werden in der Pol-Tabelle pro Variable dokumentiert. Keine genauen Mengen oder Schwellwerte festlegen — es geht um relative Unterschiede zwischen den Interviewten.
+
+**Umgang mit unklaren Fällen — keine Default-Mitte:**
+Ein Interviewter darf nur dann in einer mittleren Position eingetragen werden, wenn die Datenlage das tatsächlich belegt. Wenn die Zuordnung unklar ist, gilt:
+
+1. **Tendenz erkennbar:** Ist aus den Daten eine Richtung ablesbar — auch wenn nicht eindeutig — trage die Tendenz ein und markiere sie als Annahme mit `*` (Asterisk).
+2. **Keine Tendenz erkennbar:** Trage `?` ein. Alle `?`-Fälle werden im Abschnitt **"Nicht zuordenbar"** erläutert — mit Begründung und Hinweis, ob beim Interviewten nachgefasst werden sollte.
 
 Suche dann nach Clustern: Welche Interviewten zeigen ähnliche Muster über mehrere Variablen hinweg? Benenne jeden Cluster mit einem Arbeitstitel und beschreibe in 2–3 Sätzen, was die Personen in diesem Cluster verbindet.
 
@@ -194,15 +204,32 @@ status: "draft"
 
 # Persona Mapping: [Projektname]
 
-**Legende:** – = linker Pol | ○ = Mitte / unklar | + = rechter Pol
+**Legende:** Werte = Position auf der variablenspezifischen Skala | `*` = Annahme (Tendenz aus Daten abgeleitet, nicht explizit belegt) | `?` = nicht zuordenbar (siehe Abschnitt "Nicht zuordenbar")
+
+## Pol-Tabelle
+
+| Variable | Linker Pol | Rechter Pol | Stufen |
+|---|---|---|---|
+| [Variable 1] | [Beschreibung linker Pol] | [Beschreibung rechter Pol] | [N] |
+| [Variable 2] | [Beschreibung linker Pol] | [Beschreibung rechter Pol] | [N] |
 
 ## Variablen-Matrix
 
 | Interviewter | [Variable 1] | [Variable 2] | [Variable 3] | ... |
 |---|---|---|---|---|
-| [short-label] | – | + | ○ | ... |
-| [short-label] | + | + | – | ... |
-| [short-label] | ○ | – | – | ... |
+| [short-label] | 2 | 5 | 1* | ... |
+| [short-label] | 4 | ? | 2 | ... |
+| [short-label] | 1 | 1 | 3* | ... |
+
+---
+
+## Nicht zuordenbar
+
+> Diese Interviewten konnten für die unten genannten Variablen nicht eindeutig verortet werden. Die Datenlage lässt keine gesicherte Tendenz erkennen. Empfehlung: beim Interviewten nachfassen oder im Team eine begründete Annahme treffen.
+
+| Interviewter | Variable | Beobachtung | Empfehlung |
+|---|---|---|---|
+| [short-label] | [Variable] | [Was aus den Daten hervorgeht und warum es nicht ausreicht] | Nachfassen / Annahme treffen |
 
 ---
 

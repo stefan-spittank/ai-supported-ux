@@ -34,8 +34,8 @@ status: "draft"
 | Koordinationsbedarf | Hoch — WG-Kontext, will wissen wer was getan hat |
 | Technologienutzung | Smartphone selbstverständlich, Smart Home nicht |
 | Kritikalität Abwesenheit | Hoch — Urlaub und Reisen sind echter Schmerzpunkt |
-| Emotionale Bindung | Mittel — will nicht dass Pflanzen sterben, aber höhere Prioritäten |
-| Kontrollbedürfnis | Mittel — will Überblick behalten, aber ohne großen Aufwand |
+| Emotionale Bindung | Eher pragmatisch — Pflanzen sollen nicht sterben, sind aber keine Priorität *(Annahme aus Tendenz der Datenlage)* |
+| Kontrollbedürfnis | Eher niedrig bis mittig — will Überblick behalten, aber ohne aktives Tracking *(Annahme aus Tendenz der Datenlage)* |
 | Lernbereitschaft | Mittel bis hoch — offen für Tipps, aber kein Expertenwissen angestrebt |
 | Preissensibilität | Hoch — klare Budgetgrenze bei 2–3 €/Monat |
 
@@ -105,7 +105,7 @@ Lena öffnet die App abends nach der Arbeit oder am Wochenendmorgen beim Frühst
 |---|---|
 | Pflegestruktur | Spontan — kein System, kein fester Rhythmus |
 | Pflanzenwissen | Gering — nicht interessiert, kein Expertenwissen angestrebt |
-| Koordinationsbedarf | Mittel — Partnerin ist primäre Pflegerin, er ist Mitnutzer |
+| Koordinationsbedarf | Gering — Partnerin ist primäre Pflegerin, er koordiniert kaum aktiv *(Markus: klar Solo; Herbert: Tendenz Solo)* |
 | Technologienutzung | Hoch — Smart-Home-affin, offen für Sensoren und Automatisierung |
 | Kritikalität Abwesenheit | Hoch — lange Urlaubsreisen, provisorische Lösungen |
 | Emotionale Bindung | Gering — pragmatisch, Pflanzen werden bei Verlust ersetzt |
@@ -179,7 +179,7 @@ Thomas richtet die App gemeinsam mit seiner Frau ein — sie befüllt die Pflanz
 |---|---|
 | Pflegestruktur | Sehr hoch — Excel, Makros, Ampelsystem, Besuchszyklen |
 | Pflanzenwissen | Fundiert — recherchiert aktiv, kennt Pflegebedarf |
-| Koordinationsbedarf | Mittel — Solo-Betrieb, aber Vertretungsbedarf bei Krankheit/Urlaub |
+| Koordinationsbedarf | Nicht zuordenbar — Solo-Betrieb (kein Alltagskoordinationsbedarf), aber dokumentierter Vertretungsbedarf bei Krankheit. Die Variable trennt diese beiden Aspekte nicht; im Mapping als `?` ausgewiesen. *(Empfehlung: Variable ggf. in "Alltagskoordination" und "Vertretungskoordination" aufteilen)* |
 | Technologienutzung | Offen, aber pragmatisch — kein Interesse an Aufwand |
 | Pflanzenanzahl/Kontext | Sehr hoch — professionell, mehrere Standorte |
 | Kritikalität Abwesenheit | Hoch — Krankheitsausfall ist echtes Betriebsrisiko |
