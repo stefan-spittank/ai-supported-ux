@@ -141,7 +141,7 @@ Wenn eine Ebene fehlt oder unklar ist, überarbeite die Ziele vor dem Schreiben 
 
 ### Artefakt 1 — Variablen
 
-Dateiname: `affinity-mapping/personas/[projektname]_01_persona-variables_[datum].md`
+Dateiname: `personas/[projektname]_01_persona-variables_[datum].md`
 
 ````markdown
 ---
@@ -191,7 +191,7 @@ status: "draft"
 
 ### Artefakt 2 — Mapping
 
-Dateiname: `affinity-mapping/personas/[projektname]_02_persona-mapping_[datum].md`
+Dateiname: `personas/[projektname]_02_persona-mapping_[datum].md`
 
 ````markdown
 ---
@@ -251,7 +251,7 @@ status: "draft"
 
 ### Artefakt 3 — Personas
 
-Dateiname: `affinity-mapping/personas/[projektname]_03_personas_[datum].md`
+Dateiname: `personas/[projektname]_03_personas_[datum].md`
 
 ````markdown
 ---
