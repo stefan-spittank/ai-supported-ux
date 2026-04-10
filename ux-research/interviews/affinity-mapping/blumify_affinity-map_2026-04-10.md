@@ -372,30 +372,59 @@ status: "draft"
 ## Visualisierung
 
 ```mermaid
-mindmap
-  root((Blumify))
-    KOMPETENZ
-      Pflanzen ohne Expertenwissen pflegen
-        Pflege nach Gefühl
-        Pflanzenerkennung und Wissen
-    STIMULATION
-      Wohnung lebendig gestalten
-        Pflanzen als Dekoration
-        Ausgleich zum Alltag
-    AUTONOMIE
-      Kontrolle trotz Abwesenheit
-        Urlaub und Vertretung
-        Koordination im Haushalt
-    SICHERHEIT
-      Pflanzen nicht verlieren
-        Ueberblick und Warnungen
-        Datenschutz
-    VERBUNDENHEIT
-      Pflege als Gemeinschaftssache
-        Asymmetrische Verantwortung
-    Professionelle Pflege
-      System fuer mehrere Standorte
-    App-Nutzung
-      Technikbereitschaft und Hardware
-      Preisbereitschaft Abo
+graph LR
+    subgraph G_K [GRUNDBEDUERFNIS: KOMPETENZ]
+        SSH_K1[Pflanzen ohne Expertenwissen] --> SH_K1_1(Pflege nach Gefuehl)
+        SSH_K1 --> SH_K1_2(Pflanzenerkennung und Wissen)
+    end
+
+    subgraph G_S [GRUNDBEDUERFNIS: STIMULATION]
+        SSH_S1[Wohnung lebendig gestalten] --> SH_S1_1(Pflanzen als Dekoration)
+        SSH_S1 --> SH_S1_2(Ausgleich zum Alltag)
+    end
+
+    subgraph G_A [GRUNDBEDUERFNIS: AUTONOMIE]
+        SSH_A1[Kontrolle trotz Abwesenheit] --> SH_A1_1(Urlaub und Vertretung)
+        SSH_A1 --> SH_A1_2(Koordination im Haushalt)
+    end
+
+    subgraph G_Si [GRUNDBEDUERFNIS: SICHERHEIT]
+        SSH_Si1[Pflanzen nicht verlieren] --> SH_Si1_1(Ueberblick und Warnungen)
+        SSH_Si1 --> SH_Si1_2(Datenschutzbedenken)
+    end
+
+    subgraph G_V [GRUNDBEDUERFNIS: VERBUNDENHEIT]
+        SSH_V1[Pflege als Gemeinschaftssache] --> SH_V1_1(Asymmetrische Verantwortung)
+    end
+
+    SSH_P1[Professionelle Pflege] --> SH_P1_1(Mehrstandort-System)
+    SSH_T1[App ohne grossen Aufwand] --> SH_T1_1(Technikbereitschaft)
+    SSH_T1 --> SH_T1_2(Preisbereitschaft Abo)
+
+    style G_K fill:#e8f5e9,stroke:#2e7d32
+    style G_S fill:#e8f5e9,stroke:#2e7d32
+    style G_A fill:#e8f5e9,stroke:#2e7d32
+    style G_Si fill:#e8f5e9,stroke:#2e7d32
+    style G_V fill:#e8f5e9,stroke:#2e7d32
+
+    style SSH_K1 fill:#e3f2fd,stroke:#1565c0
+    style SSH_S1 fill:#e3f2fd,stroke:#1565c0
+    style SSH_A1 fill:#e3f2fd,stroke:#1565c0
+    style SSH_Si1 fill:#e3f2fd,stroke:#1565c0
+    style SSH_V1 fill:#e3f2fd,stroke:#1565c0
+    style SSH_P1 fill:#e3f2fd,stroke:#1565c0
+    style SSH_T1 fill:#e3f2fd,stroke:#1565c0
+
+    style SH_K1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_K1_2 fill:#fce4ec,stroke:#880e4f
+    style SH_S1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_S1_2 fill:#fce4ec,stroke:#880e4f
+    style SH_A1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_A1_2 fill:#fce4ec,stroke:#880e4f
+    style SH_Si1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_Si1_2 fill:#fce4ec,stroke:#880e4f
+    style SH_V1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_P1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_T1_1 fill:#fce4ec,stroke:#880e4f
+    style SH_T1_2 fill:#fce4ec,stroke:#880e4f
 ```

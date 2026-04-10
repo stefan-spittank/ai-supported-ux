@@ -69,25 +69,41 @@ Die 7 (+1) psychologischen Grundbedürfnisse:
 
 Zusätzlich lieferst du für jeden Cluster eine kurze Beschreibung (1–2 Sätze), die erklärt, was die Notizen in diesem Cluster verbindet.
 
-### Visualisierung (Mermaid)
+### Visualisierung (GitHub-kompatibel)
 
-Am Ende des Dokuments wird ein Mermaid-Mindmap-Block erzeugt, der die Hierarchie kompakt visualisiert: Grundbedürfnis → Super Super Header → Super Header.
+Am Ende des Dokuments wird ein Mermaid-Block vom Typ `graph LR` erzeugt, der die Hierarchie visualisiert: Grundbedürfnis → Super Super Header → Super Header.
 
-Regeln für den Mindmap-Block:
+Regeln für den Graph-Block:
 - Verwende kurze Schlagworte für die Knoten (2–5 Wörter), keine vollständigen Sätze
-- Ist keine Hassenzahl-Ebene vorhanden, bildet der Projektname die Wurzel und die Super Super Header die erste Ebene
-- Sonderzeichen in Knotentexten (Klammern, Anführungszeichen, Slashes) vermeiden oder durch Leerzeichen ersetzen, damit Mermaid den Block fehlerfrei rendert
+- Jedes Grundbedürfnis wird als `subgraph` dargestellt
+- Super Super Header als Rechteck `[text]`, Super Header als Ellipse `(text)`
+- Ist keine Hassenzahl-Ebene vorhanden, werden die Super Super Header direkt als oberste Knoten ohne subgraph dargestellt
+- Knotenbezeichner (IDs) müssen eindeutig und frei von Sonderzeichen sein (nur Buchstaben, Ziffern, Unterstriche)
+- Sonderzeichen im sichtbaren Knotentext (Anführungszeichen, eckige Klammern) durch neutrale Zeichen ersetzen
+
+Styles für die Holtzblatt-Logik:
+- Grundbedürfnis (subgraph): `fill:#e8f5e9,stroke:#2e7d32` (grün)
+- Super Super Header: `fill:#e3f2fd,stroke:#1565c0` (blau)
+- Super Header: `fill:#fce4ec,stroke:#880e4f` (pink)
 
 ```mermaid
-mindmap
-  root((Projektname))
-    Grundbedürfnis A
-      Super Super Header 1
-        Super Header 1.1
-        Super Header 1.2
-    Grundbedürfnis B
-      Super Super Header 2
-        Super Header 2.1
+graph LR
+    subgraph G1 [GRUNDBEDUERNIS: KOMPETENZ]
+        SSH1[SSH: Pflanzen am Leben erhalten] --> SH1_1(SH: Pflege nach Gefuehl)
+        SSH1 --> SH1_2(SH: Pflanzenerkennung und Wissen)
+    end
+
+    subgraph G2 [GRUNDBEDUERFNIS: AUTONOMIE]
+        SSH2[SSH: Kontrolle trotz Abwesenheit] --> SH2_1(SH: Urlaub und Vertretung)
+        SSH2 --> SH2_2(SH: Koordination im Haushalt)
+    end
+
+    style SSH1 fill:#e3f2fd,stroke:#1565c0
+    style SSH2 fill:#e3f2fd,stroke:#1565c0
+    style SH1_1 fill:#fce4ec,stroke:#880e4f
+    style SH1_2 fill:#fce4ec,stroke:#880e4f
+    style SH2_1 fill:#fce4ec,stroke:#880e4f
+    style SH2_2 fill:#fce4ec,stroke:#880e4f
 ```
 
 ### Nicht geclusterte Notizen
@@ -105,7 +121,7 @@ Da alle Rohdaten verwendet werden (keine "Capture this"-Vorauswahl wie im klassi
 5. **Super Super Header bilden**: Fasse verwandte Super Header zusammen. Vergib Titel und Beschreibung
 6. **Grundbedürfnisse prüfen (optional)**: Prüfe, ob Super Super Header eindeutig einem Hassenzahl-Bedürfnis zugeordnet werden kann
 7. **Nicht geclusterte Notizen sammeln**: Alle Notizen ohne passenden Cluster in separaten Abschnitt
-8. **Mindmap erzeugen**: Erzeuge den Mermaid-Mindmap-Block über die Hierarchie (Grundbedürfnis → Super Super Header → Super Header) mit kurzen Schlagworten
+8. **Visualisierung erzeugen**: Erzeuge den Mermaid-`graph LR`-Block mit subgraphs pro Grundbedürfnis, SSH als Rechtecke, SH als Ellipsen und den vorgegebenen Style-Farben
 9. **Dateiname ableiten**: Aus Metadaten der Protokolle ableiten (Projektname, Datum)
 10. **Datei schreiben**: Schreibe nach `/ux-research/interviews/affinity-mapping/`
 
@@ -196,15 +212,21 @@ status: "draft"
 ## Visualisierung
 
 ```mermaid
-mindmap
-  root((Projektname))
-    Grundbedürfnis A
-      Super Super Header 1
-        Super Header 1.1
-        Super Header 1.2
-    Grundbedürfnis B
-      Super Super Header 2
-        Super Header 2.1
+graph LR
+    subgraph G1 [GRUNDBEDUERFNIS: NAME A]
+        SSH1[SSH: Schlagwort] --> SH1_1(SH: Schlagwort)
+        SSH1 --> SH1_2(SH: Schlagwort)
+    end
+
+    subgraph G2 [GRUNDBEDUERFNIS: NAME B]
+        SSH2[SSH: Schlagwort] --> SH2_1(SH: Schlagwort)
+    end
+
+    style SSH1 fill:#e3f2fd,stroke:#1565c0
+    style SSH2 fill:#e3f2fd,stroke:#1565c0
+    style SH1_1 fill:#fce4ec,stroke:#880e4f
+    style SH1_2 fill:#fce4ec,stroke:#880e4f
+    style SH2_1 fill:#fce4ec,stroke:#880e4f
 ```
 ````
 
@@ -218,8 +240,10 @@ Bevor du die Datei schreibst, prüfe:
 - [ ] Alle Notizen tauchen entweder in einem Cluster oder im "Nicht geclustert"-Abschnitt auf
 - [ ] Quellenangaben (short label + Zeilennummer) sind bei jeder Notiz vollständig
 - [ ] Kein Notiztext wurde umformuliert — Originalwortlaut ist unverändert
-- [ ] Mindmap enthält alle Super Super Header und Super Header
-- [ ] Mindmap-Knoten verwenden kurze Schlagworte (keine vollständigen Sätze) und keine Sonderzeichen, die Mermaid-Rendering brechen
+- [ ] Graph enthält alle Super Super Header und Super Header
+- [ ] Knotenbezeichner (IDs) sind eindeutig und enthalten keine Sonderzeichen
+- [ ] Sichtbare Knotentexte enthalten keine Anführungszeichen oder eckigen Klammern
+- [ ] Alle SSH- und SH-Knoten haben einen `style`-Eintrag mit den vorgegebenen Farben
 - [ ] Hassenzahl-Ebene: Nur verwendet, wenn die Zuordnung eindeutig und nicht erzwungen ist
 - [ ] Modus B: Changelog enthält alle strukturellen Änderungen gegenüber der Vorgänger-Map
 - [ ] Modus B: Kein Cluster wurde nur deshalb beibehalten, weil er bereits existierte
