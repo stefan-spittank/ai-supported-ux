@@ -1,4 +1,4 @@
-# AI-Supported UX Research — Interview Agents
+# AI-Supported UX Research 
 
 Dieses Repository enthält Claude Code Agenten, die einen KI-unterstützten UX-Research-Prozess abbilden. Die Agenten übernehmen methodisch anspruchsvolle Auswertungsschritte, die im klassischen Prozess manuell und zeitintensiv sind — und geben dem Team mehr Kapazität für Interpretation, Design-Entscheidungen und Validation.
 
