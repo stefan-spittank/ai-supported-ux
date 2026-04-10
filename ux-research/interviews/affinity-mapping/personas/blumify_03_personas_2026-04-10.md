@@ -2,7 +2,7 @@
 title: "Personas: Blumify"
 date: 2026-04-10
 interviews: fh-hg, mh-je, dw-am, aw-ms, sb-jk
-mapping_source: affinity-mapping/personas/blumify_persona-mapping_2026-04-10.md
+mapping_source: affinity-mapping/personas/blumify_02_persona-mapping_2026-04-10.md
 personas_count: 1 primary + 2 secondary
 status: "draft"
 ---
