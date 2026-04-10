@@ -1,84 +1,84 @@
-# AI-Supported UX Research 
+# AI-Supported UX Research
 
-Dieses Repository enthält Claude Code Agenten, die einen KI-unterstützten UX-Research-Prozess abbilden. Die Agenten übernehmen methodisch anspruchsvolle Auswertungsschritte, die im klassischen Prozess manuell und zeitintensiv sind — und geben dem Team mehr Kapazität für Interpretation, Design-Entscheidungen und Validation.
+This repository contains Claude Code agents that implement an AI-supported UX research process. The agents handle methodologically demanding analysis steps that are manual and time-intensive in the classic process — giving the team more capacity for interpretation, design decisions, and validation.
 
-Die Agenten sind keine Blackboxen: Jede Entscheidung ist im Output nachvollziehbar und kann vom Team hinterfragt oder revidiert werden.
+The agents are not black boxes: every decision is traceable in the output and can be questioned or revised by the team.
 
-## Verzeichnisstruktur
+## Directory Structure
 
 ```
 interviews/
 ├── .claude/
 │   └── agents/
-│       ├── affinity-mapping.md    # Agent-Definition
-│       └── persona-creation.md   # Agent-Definition
-├── notes/                         # Rohdaten: Interview-Protokolle
-│   └── interview_[kürzel].md
+│       ├── affinity-mapping.md    # Agent definition
+│       └── persona-creation.md   # Agent definition
+├── notes/                         # Raw data: interview protocols
+│   └── interview_[label].md
 ├── affinity-mapping/              # Output: Affinity Maps
-│   └── [projekt]_affinity-map_[datum].md
-├── personas/                      # Output: Persona-Artefakte
-│   ├── [projekt]_01_persona-variables_[datum].md
-│   ├── [projekt]_02_persona-mapping_[datum].md
-│   └── [projekt]_03_personas_[datum].md
+│   └── [project]_affinity-map_[date].md
+├── personas/                      # Output: Persona artifacts
+│   ├── [project]_01_persona-variables_[date].md
+│   ├── [project]_02_persona-mapping_[date].md
+│   └── [project]_03_personas_[date].md
 └── README.md
 ```
 
-## Agenten
+## Agents
 
 ### 1. `affinity-mapping` — Holtzblatt Affinity Mapping
 
-Wertet Nutzerinterviews nach der [Affinity Mapping Methode von Karen Holtzblatt](https://en.wikipedia.org/wiki/Affinity_diagram) aus. Der Agent liest beliebig viele Interview-Protokolle, clustert alle Notizen in eine vierstufige Hierarchie und ordnet die Cluster optional den psychologischen Grundbedürfnissen nach [Marc Hassenzahl](https://hassenzahl.wordpress.com/) zu.
+Evaluates user interviews according to the [Affinity Mapping method by Karen Holtzblatt](https://en.wikipedia.org/wiki/Affinity_diagram). The agent reads any number of interview protocols, clusters all notes into a four-level hierarchy, and optionally maps the clusters to psychological needs according to [Marc Hassenzahl](https://hassenzahl.wordpress.com/).
 
-**Anleitung → siehe unten**
+**Instructions → see below**
 
-### 2. `persona-creation` — UX Personas nach Cooper / Goodwin
+### 2. `persona-creation` — UX Personas according to Cooper / Goodwin
 
-Erstellt datengetriebene UX Personas aus Interview-Protokollen und einer optionalen Affinity Map. Die Methode basiert auf Kim Goodwins Ansatz aus *"Designing for the Digital Age"* und Alan Coopers Persona-Framework. Der Agent arbeitet in drei moderierten Schritten und holt nach jedem Schritt aktiv Feedback ein — die Zwischenergebnisse sind als Artefakte gespeichert und können vor der Weiterverarbeitung geprüft und angepasst werden.
+Creates data-driven UX Personas from interview protocols and an optional Affinity Map. The method is based on Kim Goodwin's approach from *"Designing for the Digital Age"* and Alan Cooper's persona framework. The agent works in three moderated steps and actively requests feedback after each step — the intermediate results are saved as artifacts and can be reviewed and adjusted before further processing.
 
-**Anleitung → siehe unten**
+**Instructions → see below**
 
 ---
 
-## Anleitung: `affinity-mapping`
+## Instructions: `affinity-mapping`
 
-### Voraussetzungen
+### Prerequisites
 
-- [Claude Code](https://claude.ai/code) ist installiert und im Repository-Verzeichnis geöffnet
-- Interview-Protokolle liegen als Markdown-Dateien mit YAML-Frontmatter unter `notes/` vor
+- [Claude Code](https://claude.ai/code) is installed and opened in the repository directory
+- Interview protocols are available as Markdown files with YAML frontmatter under `notes/`
 
-### Format der Interview-Protokolle
+### Format of Interview Protocols
 
-Jede Protokolldatei benötigt ein YAML-Frontmatter und nummerierte Zeilen als Rohdaten:
+Each protocol file requires a YAML frontmatter and numbered lines as raw data:
 
 ```markdown
 ---
-title: "User interview: Projektname"
-short label: "kürzel"
+title: "User interview: Project name"
+short label: "label"
 date: 2026-04-01
 interviewer: "Name"
 interviewee: "Name"
 minute taker: "Name"
-methode: "Semi-structured interview"
+method: "Semi-structured interview"
 length: 45
 status: "raw data"
 ---
 
-1. Erste Beobachtung aus dem Interview
-2. Zweite Beobachtung
+1. First observation from the interview
+2. Second observation
 3. ...
 ```
 
-Jede nummerierte Zeile wird als eigenständige Notiz behandelt. Der Wortlaut wird vom Agenten nie verändert.
+Each numbered line is treated as an independent note. The wording is never changed by the agent.
 
-### Modus A — Neue Affinity Map erstellen
+### Mode A — Create new Affinity Map
 
-1. Claude Code öffnen und den Agenten aufrufen:
+1. Open Claude Code and call the agent:
 
    ```
    /agent affinity-mapping
    ```
 
-2. Der Agent fragt nach den Protokoll-Dateien. Pfade angeben, z.B.:
+2. The agent asks for the protocol files. Provide the paths, e.g.:
 
    ```
    notes/interview_fh_hg.md
@@ -86,112 +86,112 @@ Jede nummerierte Zeile wird als eigenständige Notiz behandelt. Der Wortlaut wir
    notes/interview_dw_am.md
    ```
 
-3. Der Agent erstellt die Affinity Map und schreibt sie nach `affinity-mapping/[projektname]_affinity-map_[datum].md`.
+3. The agent creates the Affinity Map and writes it to `affinity-mapping/[projectname]_affinity-map_[date].md`.
 
-### Modus B — Bestehende Affinity Map erweitern
+### Mode B — Extend existing Affinity Map
 
-1. Den Agenten aufrufen und Modus B angeben:
+1. Call the agent and specify Mode B:
 
    ```
    /agent affinity-mapping
    ```
 
-2. Dem Agenten mitteilen, welche bestehende Map erweitert werden soll und welche neuen Protokolle hinzukommen:
+2. Tell the agent which existing map should be extended and which new protocols are being added:
 
    ```
-   Erweitere affinity-mapping/blumify_affinity-map_2026-04-10.md
-   um die neuen Protokolle: notes/interview_xy_ab.md
+   Extend affinity-mapping/blumify_affinity-map_2026-04-10.md
+   with the new protocols: notes/interview_xy_ab.md
    ```
 
-3. Der Agent clustert alle Notizen (bestehende + neue) neu von Grund auf — bestehende Cluster werden bei Bedarf aufgebrochen, gesplittet oder umbenannt. Ein **Changelog** im Output dokumentiert alle Strukturänderungen.
+3. The agent re-clusters all notes (existing + new) from scratch — existing clusters may be broken up, split, or renamed as needed. A **changelog** in the output documents all structural changes.
 
-### Was der Agent ausgibt
+### What the Agent Outputs
 
-Die erzeugte Markdown-Datei enthält:
+The generated Markdown file contains:
 
-| Abschnitt | Inhalt |
+| Section | Content |
 |---|---|
-| Frontmatter | Metadaten: Projektname, Datum, verarbeitete Interviews |
-| Statistik-Zeile | Notizen gesamt / geclustert / nicht geclustert |
-| Changelog *(Modus B)* | Welche Cluster gesplittet, umbenannt oder neu gebildet wurden |
-| Grundbedürfnisse | Optionale oberste Ebene nach Hassenzahl (grün) |
-| Super Super Header | Übergeordnete Themen (blau) |
-| Super Header | Themengruppen (pink) |
-| Header | Kleine Notizgruppen (gelb), mit Originaltext der Notizen |
-| Nicht geclustert | Alle Notizen ohne Cluster-Zuordnung — transparent ausgewiesen |
-| Visualisierung | Mermaid `graph LR` mit farblicher Holtzblatt-Kodierung |
+| Frontmatter | Metadata: project name, date, processed interviews |
+| Statistics line | Total notes / clustered / unclustered |
+| Changelog *(Mode B)* | Which clusters were split, renamed, or newly created |
+| Needs | Optional top level according to Hassenzahl (green) |
+| Super Super Header | Top-level themes (blue) |
+| Super Header | Theme groups (pink) |
+| Header | Small note groups (yellow), with original note text |
+| Unclustered | All notes without cluster assignment — transparently documented |
+| Visualization | Mermaid `graph LR` with Holtzblatt color coding |
 
-### Cluster-Titel — die wichtigste Qualitätsregel
+### Cluster Titles — the Most Important Quality Rule
 
-Alle Cluster-Titel auf Header- und Super-Header-Ebene sind Sätze aus der **Nutzerperspektive**:
+All cluster titles at the Header and Super Header level are sentences from the **user's perspective**:
 
-- Gut: *"Bei Urlaub bin ich auf andere angewiesen"*
-- Schlecht: *"Urlaub"* oder *"Koordinationsproblem"*
+- Good: *"When I'm away, I depend on others"*
+- Bad: *"Vacation"* or *"Coordination problem"*
 
-Diese Formulierung macht die Insights direkt kommunizierbar — im Team-Meeting, im Design-Brief oder gegenüber Stakeholdern.
+This phrasing makes insights directly communicable — in team meetings, in design briefs, or with stakeholders.
 
-### Beispiel-Output
+### Example Output
 
-`affinity-mapping/blumify_affinity-map_2026-04-10.md` zeigt eine vollständige Auswertung von 5 Interviews (125 Notizen, 101 geclustert) für das fiktive Produkt *Blumify*.
+`affinity-mapping/blumify_affinity-map_2026-04-10.md` shows a complete evaluation of 5 interviews (125 notes, 101 clustered) for the fictional product *Blumify*.
 
 ---
 
-## Anleitung: `persona-creation`
+## Instructions: `persona-creation`
 
-### Voraussetzungen
+### Prerequisites
 
-- [Claude Code](https://claude.ai/code) ist installiert und im Repository-Verzeichnis geöffnet
-- Interview-Protokolle liegen als Markdown-Dateien unter `notes/` vor (gleiches Format wie für `affinity-mapping`)
-- Eine Affinity Map unter `affinity-mapping/` ist empfohlen, aber nicht zwingend
+- [Claude Code](https://claude.ai/code) is installed and opened in the repository directory
+- Interview protocols are available as Markdown files under `notes/` (same format as for `affinity-mapping`)
+- An Affinity Map under `affinity-mapping/` is recommended but not required
 
-### Aufruf
+### Invocation
 
 ```
 /agent persona-creation
 ```
 
-Der Agent fragt nach den Interview-Protokollen und der optionalen Affinity Map. Dann startet er den dreistufigen Prozess und holt nach jedem Schritt Feedback ein.
+The agent asks for the interview protocols and the optional Affinity Map. Then it starts the three-step process and requests feedback after each step.
 
-### Die drei Schritte
+### The Three Steps
 
-Der Agent arbeitet in drei Schritten und pausiert nach jedem für Feedback. Erst nach Bestätigung (oder nach dem Umsetzen von Änderungen) geht er weiter.
+The agent works in three steps and pauses after each for feedback. Only after confirmation (or after implementing requested changes) does it proceed.
 
-**Schritt 1 — Verhaltens- und Einstellungsvariablen**
+**Step 1 — Behavioral and Attitudinal Variables**
 
-Der Agent leitet aus den Rohdaten 6–12 Variablen ab, die echte Unterschiede zwischen den Interviewten beschreiben. Jede Variable hat zwei klar benannte Pole und eine variable-spezifische Skala (binär, 3- oder 5-stufig, je nach Natur der Variable).
+The agent derives 6–12 variables from the raw data that describe real differences between interviewees. Each variable has two clearly named poles and a variable-specific scale (binary, 3-level, or 5-level, depending on the nature of the variable).
 
-Output: `affinity-mapping/personas/[projekt]_01_persona-variables_[datum].md`
+Output: `personas/[project]_01_persona-variables_[date].md`
 
-**Schritt 2 — Mapping und Cluster**
+**Step 2 — Mapping and Clusters**
 
-Der Agent verortet jeden Interviewten auf jeder Variable und sucht nach Clustern ähnlicher Profile. Unklare Zuordnungen werden nicht in eine Default-Mitte gesetzt: Tendenzen werden als Annahmen markiert (`*`), echte Unklarheiten als `?` ausgewiesen und im Abschnitt "Nicht zuordenbar" erläutert — mit Empfehlung, ob beim Interviewten nachgefasst werden sollte.
+The agent positions each interviewee on each variable and looks for clusters of similar profiles. Unclear assignments are never placed in a default middle: tendencies are marked as assumptions (`*`), genuine ambiguities are documented as `?` and explained in the "Not Assignable" section — with a recommendation on whether to follow up with the interviewee.
 
-Output: `affinity-mapping/personas/[projekt]_02_persona-mapping_[datum].md`
+Output: `personas/[project]_02_persona-mapping_[date].md`
 
-**Schritt 3 — Personas**
+**Step 3 — Personas**
 
-Aus jedem Cluster entsteht eine Primary oder Secondary Persona mit Name, demografischer Skizze, Zitat, Verhaltenscluster-Tabelle, Zielen auf drei Ebenen und Frustrations & Pain Points. Der Agent führt eine Qualitätsprüfung durch.
+From each cluster, one Primary or Secondary Persona is created with name, demographic sketch, quote, behavior cluster table, goals at three levels, and Frustrations & Pain Points. The agent conducts a quality check.
 
-Output: `affinity-mapping/personas/[projekt]_03_personas_[datum].md`
+Output: `personas/[project]_03_personas_[date].md`
 
-### Die drei Ziel-Ebenen nach Cooper
+### The Three Goal Levels according to Cooper
 
-Eine gute Persona hat klar ausgearbeitete Ziele auf drei Ebenen:
+A good persona has clearly developed goals at three levels:
 
-| Ebene | Frage | Beispiel |
+| Level | Question | Example |
 |---|---|---|
-| **Moto-Goals** | Warum? Tiefe Motivation | *"Ich will nicht die Person sein, die immer Pflanzen tötet"* |
-| **Do-Goals** | Was? Konkrete Aufgaben | *"Auf einen Blick sehen, welche Pflanzen heute Wasser brauchen"* |
-| **Be-Goals** | Wie? Gewünschte Selbstwahrnehmung | *"Ich will mich als jemanden fühlen, der die Dinge im Griff hat"* |
+| **Moto-Goals** | Why? Deep motivation | *"I don't want to be the person who always kills plants"* |
+| **Do-Goals** | What? Concrete tasks | *"See at a glance which plants need water today"* |
+| **Be-Goals** | How? Desired self-perception | *"I want to feel like someone who has things under control"* |
 
-### Was der Agent ausgibt
+### What the Agent Outputs
 
-| Artefakt | Datei | Inhalt |
+| Artifact | File | Content |
 |---|---|---|
-| Variablen | `_01_persona-variables_` | 6–12 Variablen mit Polbeschreibung, Skala und Evidenz aus den Rohdaten |
-| Mapping | `_02_persona-mapping_` | Pol-Tabelle, Variablen-Matrix, Cluster-Vorschläge, Abschnitt "Nicht zuordenbar" |
-| Personas | `_03_personas_` | Primary und Secondary Personas mit Zielen, Pain Points, Kontext und Qualitätsprüfung |
+| Variables | `_01_persona-variables_` | 6–12 variables with pole description, scale, and evidence from the raw data |
+| Mapping | `_02_persona-mapping_` | Pole table, variable matrix, cluster suggestions, "Not Assignable" section |
+| Personas | `_03_personas_` | Primary and Secondary Personas with goals, pain points, context, and quality check |
 
-### Beispiel-Output
+### Example Output
 
-`affinity-mapping/personas/blumify_01_persona-variables_2026-04-10.md`, `_02_persona-mapping_` und `_03_personas_` zeigen eine vollständige Persona-Erstellung aus 5 Blumify-Interviews mit 3 Personas (1 Primary, 2 Secondary).
+`personas/blumify_01_persona-variables_2026-04-10.md`, `_02_persona-mapping_`, and `_03_personas_` show a complete persona creation from 5 Blumify interviews with 3 personas (1 Primary, 2 Secondary). Note: the example files are in German as they were created during the initial development of this repository.
