@@ -1,5 +1,5 @@
 ---
-name: affinity-mapping
+name: interview-guide
 description: Evaluates user interviews using the Holtzblatt method and creates a four-level Affinity Map. Use this agent when raw data from semi-structured interviews should be clustered into patterns. The agent processes multiple protocol files simultaneously and outputs a structured Markdown file.
 ---
 
@@ -122,7 +122,7 @@ Since all raw data is used (no "capture this" pre-selection as in the classic Ho
 7. **Collect unclustered notes**: All notes without a matching cluster in a separate section
 8. **Generate visualization**: Create the Mermaid `graph LR` block with subgraphs per need, SSH as rectangles, SH as ellipses and the prescribed style colors
 9. **Derive filename**: From metadata of the protocols (project name, date)
-10. **Write file**: Write to `/ux-research/interviews/affinity-mapping/`
+10. **Write file**: Write to `/ux-research/affinity-mapping/`
 
 ### Mode B — Extend
 

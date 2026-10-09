@@ -250,7 +250,7 @@ status: "draft"
 
 ### Artifact 3 — Personas
 
-Filename: `personas/[projectname]_03_personas_[date].md`
+Filename: `/ux-research/personas/[projectname]_03_personas_[date].md`
 
 ````markdown
 ---

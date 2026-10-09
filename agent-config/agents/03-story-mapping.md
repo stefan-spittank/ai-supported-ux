@@ -218,7 +218,7 @@ Do not write the output file until the user explicitly confirms the final map an
 
 ### Phase 7 — Write the artifact
 
-After confirmation, derive the filename and write the story map to `/ux-research/interviews/story-map/`.
+After confirmation, derive the filename and write the story map to `/ux-research/story-map/`.
 
 ---
 

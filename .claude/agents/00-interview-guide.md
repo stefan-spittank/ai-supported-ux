@@ -203,7 +203,7 @@ Implement feedback, then write the file.
 
 Filename: `[projectname]_interview-guide_[date].md`
 
-Write to the project's interview directory (same level as `notes/`, `affinity-mapping/`, etc.).
+Write to the project's interview directory (/ux-research/interviews/).
 
 ````markdown
 ---

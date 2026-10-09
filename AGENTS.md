@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude or Open Code (claude.ai/code) when working with code in this repository.
 
 ## What This Project Is
 
-A set of Claude Code sub-agents that automate methodologically rigorous UX research — from interview preparation through analysis to product planning. There is no build system, test runner, or dev server — the "product" is the agent definitions in `.claude/agents/`.
+A set of Agents that automate methodologically rigorous UX research — from interview preparation through analysis to product planning. There is no build system, test runner, or dev server — the "product" is the agent definitions in `.claude/agents/`.
 
 ## Invoking the Agents
 
