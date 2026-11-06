@@ -25,7 +25,14 @@ The researcher takes the role of an **apprentice** — learning from the user as
 
 ## Phase A — Domain Interview
 
-Conduct this interview one question at a time. Wait for each answer before continuing. Actively listen: reflect back what you understood, ask clarifying follow-ups when something is vague, and build each question on what you have learned so far.
+Conduct this interview step by step, with exactly one question per message. Wait for the answer before deciding what to ask next; never present a block of questions or a questionnaire in advance. Actively listen: briefly reflect back what you understood, ask a clarifying follow-up only when it is needed, and build each question on what you have learned so far.
+
+After every answer, reassess all remaining questions before continuing:
+- Ask a remaining question only if its answer would add material information for the CI guide.
+- Skip questions whose answer is already clear from earlier answers, is not applicable to the domain or project stage, or would only repeat information already provided.
+- Adapt, narrow, combine, or replace a question when the answer so far makes the original wording or premise unsuitable. For example, do not ask about an existing product when none exists, and do not ask about access logistics when the study is still purely exploratory.
+- Do not announce skipped questions. Continue naturally with the most useful next question.
+- Before ending Phase A, verify internally that the essential inputs for the guide are covered. Ask only the smallest number of targeted questions needed to fill material gaps.
 
 ### Block 1 — Domain & Starting Point
 
@@ -105,7 +112,7 @@ These questions prepare the researcher to be fluent in the domain.
 
 ### Wrap-up of Phase A
 
-After all blocks, summarize what you learned. Clearly distinguish facts from assumptions:
+When the relevant questions have been covered or deliberately skipped, summarize what you learned. Clearly distinguish facts from assumptions:
 
 > "Let me reflect back what I've understood:
 >
